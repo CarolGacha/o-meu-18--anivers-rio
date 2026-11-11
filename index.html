@@ -156,17 +156,35 @@ Ainda tenho muito para descobrir, aprender e realizar.<br><br>
       sobre: ["🎀 Sobre mim", "Um bocadinho de quem sou, das coisas que adoro e daquilo que me torna única."]
     };
 
-    function mostrar(secao) {
-      const dados = secoes[secao];
+    
+function mostrar(secao) {
+  const dados = secoes[secao];
+  const conteudo = document.getElementById("conteudo");
 
-      document.getElementById("conteudo").innerHTML =
-        `<h2>${dados[0]}</h2><p>${dados[1]}</p>`;
+  if (secao === "galeria") {
+    conteudo.innerHTML = `
+      <h2>🎁 A minha galeria</h2>
+      <p>Cada presente guarda uma recordação especial!</p>
 
-      document.getElementById("conteudo").scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }
+      <div class="galeria-presentes">
+        <button onclick="abrirPresente(1)">🎁 Presente 1</button>
+        <button onclick="abrirPresente(2)">🎁 Presente 2</button>
+        <button onclick="abrirPresente(3)">🎁 Presente 3</button>
+        <button onclick="abrirPresente(4)">🎁 Presente 4</button>
+      </div>
+
+      <div id="presente-aberto"></div>
+    `;
+  } else {
+    conteudo.innerHTML =
+      `<h2>${dados[0]}</h2><p>${dados[1]}</p>`;
+  }
+
+  conteudo.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
   </script>
 
 </body>
