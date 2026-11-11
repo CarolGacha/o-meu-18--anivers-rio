@@ -185,6 +185,41 @@ function mostrar(secao) {
     block: "center"
   });
 }
+ 
+function abrirPresente(numero) {
+  const fotos = {
+    1: "2anos.jpg",
+    2: "3 anos.jpg",
+    3: "mascara.jpg",
+    4: "aulinha.jpg"
+    5: "autocarro.jpg"
+    6: "jeca.jpg"
+    7: "meeee.jpg"
+    8: "6aninhos.jpg"
+    9: "aizawa.jpg"
+    10: "6ano.jpg"
+    11: "halloween.jpg"
+    12
+  };
+
+  const mensagens = {
+    1: "Uma recordação especial 💗",
+    2: "Um momento inesquecível 🌸",
+    3: "Uma memória para guardar ✨",
+    4: "Mais uma página da minha história 🎀"
+  };
+
+  document.getElementById("presente-aberto").innerHTML = `
+    <div class="foto-revelada">
+      <h3>🎉 Surpresa!</h3>
+      <img src="imagens/${fotos[numero]}" 
+           alt="Fotografia de recordação"
+           style="width:100%; max-width:300px; border-radius:15px;">
+      <p>${mensagens[numero]}</p>
+      <button onclick="mostrar('galeria')">Voltar aos presentes 🎁</button>
+    </div>
+  `;
+} 
   </script>
 
 </body>
